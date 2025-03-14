@@ -72,13 +72,13 @@
 }
 
 .connecter {
-  background-color: #ff6f61;
+  background-color: #ff6600;
   color: white;
 }
 
 
 .connecter:hover {
-  background-color: #e85b50;
+  background-color: #ff6600;
 }
 
 .learn-more:hover {

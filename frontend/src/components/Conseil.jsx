@@ -42,14 +42,14 @@ const conseils = [
 
 const Conseil = () => {
   return (
-    <div className="container">
+    <div className="containerr">
       <div className="title">
         <h4>Nos Conseils</h4>
         <h1>Secourisme pour Animaux</h1>
       </div>
-      <div className="grid">
+      <div className="gride">
         {conseils.map((conseil) => (
-          <div key={conseil.id} className="card">
+          <div key={conseil.id} className="carde">
             <img src={conseil.icon} alt={conseil.title} className="icon" />
             <h3>{conseil.title}</h3>
             <p>{conseil.text}</p>

@@ -1,6 +1,7 @@
-import React from 'react'
+import React from "react";
 import "./Navbar.css"; // Import du fichier CSS
-
+import { Link } from "react-router";
+import Login from "./Login";
 
 function Home() {
   return (
@@ -15,14 +16,14 @@ function Home() {
             ladifférence dès aujourd’hui !
           </p>
           <div className="buttons">
-            <button className="connecter">se connecter</button>
+            <Link to={"/Login"}>
+              <button className="connecter">se connecter</button>
+            </Link>
           </div>
         </div>
       </div>
-      Bienvenue sur Adopt Me – Offrons un foyer à chaque animal !🐾❤️ Notre
-      mission : Aider les animaux à trouver une famille aimante
     </div>
   );
 }
 
-export default Home
+export default Home;

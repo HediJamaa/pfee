@@ -1,6 +1,10 @@
-.container {
+.containerr {
   text-align: center;
-  padding: 50px 20px;
+  padding: 50px 200px;
+  background-image: url(conseil.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .title h4 {
@@ -14,14 +18,14 @@
   color: #ff6600;
 }
 
-.grid {
+.gride {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 30px;
 }
 
-.card {
+.carde {
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -29,7 +33,7 @@
   transition: 0.3s;
 }
 
-.card:hover {
+.carde:hover {
   transform: translateY(-5px);
 }
 

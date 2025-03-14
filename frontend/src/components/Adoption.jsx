@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Button } from "primereact/button";
 import { Carousel } from "primereact/carousel";
 import { Tag } from "primereact/tag";
+import { ProductService } from "./service/ProductService";
 
-export default function CircularDemo() {
+export default function NumScrollDemo() {
   const [products, setProducts] = useState([]);
-
   const responsiveOptions = [
     {
       breakpoint: "1400px",
@@ -33,50 +33,33 @@ export default function CircularDemo() {
     switch (product.inventoryStatus) {
       case "INSTOCK":
         return "success";
+
       case "LOWSTOCK":
         return "warning";
+
       case "OUTOFSTOCK":
         return "danger";
+
       default:
         return null;
     }
   };
 
-  // Remplacer ProductService par des données statiques
   useEffect(() => {
-    const staticProducts = [
-      {
-        id: 1,
-        name: "Produit 1",
-        price: 25,
-        inventoryStatus: "INSTOCK",
-        image: "product1.jpg",
-      },
-      {
-        id: 2,
-        name: "Produit 2",
-        price: 15,
-        inventoryStatus: "LOWSTOCK",
-        image: "product2.jpg",
-      },
-      {
-        id: 3,
-        name: "Produit 3",
-        price: 40,
-        inventoryStatus: "OUTOFSTOCK",
-        image: "product3.jpg",
-      },
-      // Ajoute d'autres produits ici
-    ];
-    setProducts(staticProducts);
+    ProductService.getProductsSmall().then((data) =>
+      setProducts(data.slice(0, 9))
+    );
   }, []);
 
   const productTemplate = (product) => {
     return (
       <div className="border-1 surface-border border-round m-2 text-center py-5 px-3">
-        <div className="mb-3">
+        <div
+          style={{ display: "flex", justifyContent: "center" }}
+          className="mb-3"
+        >
           <img
-            src={`https://via.placeholder.com/150?text=${product.name}`}
+            src={product.image}
             alt={product.name}
             className="w-6 shadow-2"
           />
@@ -101,15 +84,14 @@ export default function CircularDemo() {
   };
 
   return (
-    <div style={{margin:"0 20px"}} className="carde">
+    <div style={{ padding: "0 200px" }} className="card">
       <Carousel
+        autoplayInterval={5000}
+        circular={true} // Enable circular scrolling
         value={products}
-        numVisible={3}
-        numScroll={3}
+        numScroll={1}
+        numVisible={4}
         responsiveOptions={responsiveOptions}
-        className="custom-carousel"
-        circular
-        autoplayInterval={3000}
         itemTemplate={productTemplate}
       />
     </div>
