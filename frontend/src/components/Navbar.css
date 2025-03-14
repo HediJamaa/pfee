@@ -17,7 +17,6 @@
 
 .header-image {
   width: 100%;
-  max-height: 500px; /* Ajuste selon tes besoins */
   object-fit: cover; /* Recadre bien l'image */
 }
 
@@ -29,7 +28,7 @@
 
 .header-image {
   width: 100%;
-  max-height: 500px;
+  height: 92vh !important;
   object-fit: cover;
 }
 

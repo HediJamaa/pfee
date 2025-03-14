@@ -7,8 +7,12 @@ function Home() {
   return (
     <div>
       {/* Conteneur de l'image avec texte superposé */}
-      <div className="image-container">
-        <img src="/Chat1.jpg" className="header-image" />
+      <div style={{ height: "92vh" }} className="image-container">
+        <img
+          style={{ height: "100vh" }}
+          src="/Chat1.jpg"
+          className="header-image"
+        />
         <div className="image-text">
           <h2>Bienvenue sur Adopt Me</h2>
           <p>

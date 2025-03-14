@@ -1,3 +1,9 @@
+.image-text p {
+  color: #fff;
+}
+
+
+
 .nav image {
     height: 10px; /* Ajuste la taille selon ton besoin */
     padding: 5px 15px; /* Réduit le padding */
