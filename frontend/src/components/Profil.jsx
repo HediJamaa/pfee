@@ -25,9 +25,3 @@ function Profil() {
 }
 
 export default Profil;
-
-//  <button  onClick={() => {
-//             setTimeout(() => {localStorage.removeItem("token");
-
-//               navigate("/logi");
-//             }, 1000);}} >logout</button>

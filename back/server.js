@@ -14,6 +14,9 @@ connectDB();
 app.use(express.json());
 app.use(cors());
 app.use("/user",require("./routes/user"))
+app.use("/animals", require("./routes/animal"));
+app.use("/post", require("./routes/post"));
+
 
 //server
 const PORT=process.env.PORT;

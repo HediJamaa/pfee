@@ -14,7 +14,7 @@ export const userRegister = createAsyncThunk("user/register", async (user) => {
   }
 });
 
-export const userlogin = createAsyncThunk("user/logi", async (user) => {
+export const userlogin = createAsyncThunk("user/login", async (user) => {
   try {
     let response = await axios.post("http://localhost:5000/user/login", user);
     return response;
@@ -78,6 +78,7 @@ export const userSlice = createSlice({
       })
       .addCase(userlogin.rejected, (state) => {
         state.status = "fail";
+         localStorage.removeItem("token");
       })
 
       // userCurrent
@@ -87,6 +88,7 @@ export const userSlice = createSlice({
       .addCase(userCurrent.fulfilled, (state, action) => {
         state.status = "success";
         state.user = action.payload?.data.user;
+  localStorage.setItem("token", action.payload.data.token);
       })
       .addCase(userCurrent.rejected, (state) => {
         state.status = "fail";

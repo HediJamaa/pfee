@@ -1,5 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); 
+// bch yejib bibliothéque Mongos 
 const schema = mongoose.Schema;
+
 const UserSchema = new schema({
   name: {
     type: String,
